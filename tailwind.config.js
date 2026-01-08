@@ -7,6 +7,7 @@ export default {
   ],
   theme: {
     extend: {},
+    colorFormat: 'rgb',
   },
   plugins: [],
 }
