@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from './components/Header'
 import Dashboard from './pages/Dashboard'
+import ThemeToggle from './components/ThemeToggle'
 
 
 function App() {

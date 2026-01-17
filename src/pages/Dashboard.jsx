@@ -50,7 +50,7 @@ export default function Dashboard() {
     const latest = data[0];
 
     return (
-        <main className="p-6 max-w-6xl mx-auto space-y-6">
+        <main  className="p-6 max-w-6xl mx-auto space-y-6 bg-gray-100 dark:bg-gray-900 min-h-screen">
             <div className="grid md:grid-cols-3 gap-4">
                 <WeatherCard
                     type="temperature"
@@ -71,7 +71,6 @@ export default function Dashboard() {
                     unit="hPa"
                 />
             </div>
-
             <WeatherTable data={data} />
         </main>
     );

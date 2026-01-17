@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { WiDaySunny } from "react-icons/wi";
+import ThemeToggle from "./ThemeToggle";
 
 const words = ["JAM WeatherX", "Tu clima en tiempo real", "Temperatura, Humedad y Presión"];
 
@@ -40,12 +41,24 @@ export default function Header() {
     }, [text, isDeleting, wordIndex]);
 
     return (
-        <header className="bg-white shadow-md p-4 flex items-center gap-3">
-            <WiDaySunny size={60} className="text-yellow-500 animate-pulse cursor-pointer" />
-            <h1 className="text-2xl font-bold hover:text-blue-600 transition-colors duration-200 cursor-pointer min-h-[32px]">
-                {text}
-                <span className="opacity-50 animate-pulse">|</span>
-            </h1>
-        </header>
+        <header className="bg-white dark:bg-gray-950 shadow-md">
+    <div className="p-4 flex items-center justify-between">
+      
+      {/* Izquierda: logo + título */}
+      <div className="flex items-center gap-3 min-w-0">
+        <WiDaySunny size={60} className="text-yellow-500 animate-pulse cursor-pointer shrink-0" />
+        <h1 className="text-2xl font-bold hover:text-blue-600 transition-colors duration-200 cursor-pointer min-h-[32px] text-gray-900 dark:text-gray-100 truncate">
+          {text}
+          <span className="opacity-50 animate-pulse">|</span>
+        </h1>
+      </div>
+
+      {/* Derecha: botón */}
+      <div className="shrink-0">
+        <ThemeToggle />
+      </div>
+
+    </div>
+  </header>
     );
 }
